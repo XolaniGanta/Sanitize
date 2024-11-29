@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensitive Words Manager</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-color: #3a3a3a;
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #3a3a3a;
+            margin-bottom: 10px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        textarea, input {
+            margin: 8px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #ffffff;
+            transition: border 0.3s;
+        }
+
+        textarea:focus, input:focus {
+            border-color: #555;
+        }
+
+        button {
+            margin-top: 8px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            background-color: #555;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3a3a3a;
+        }
+
+        /* Output display */
+        #all-words-output, #sanitize-output {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            color: #555;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            textarea, input, button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Sensitive Words Manager</h1>
+
+    <div class="container">
+        <!-- Add Sensitive Words -->
+        <h2>Add Sensitive Words</h2>
+        <form id="add-form">
+            <textarea id="add-input" rows="3" placeholder="Enter words (comma-separated)"></textarea>
+            <button type="submit">Add Words</button>
+        </form>
+        <div id="add-output"></div>
+
+        <!-- Get All Sensitive Words -->
+        <h2>All Sensitive Words</h2>
+        <button id="get-all-button">View All Words</button>
+        <div id="all-words-output"></div>
+
+        <!-- Sanitize Input -->
+        <h2>Sanitize Input</h2>
+        <form id="sanitize-form">
+            <textarea id="sanitize-input" rows="3" placeholder="Enter text to sanitize"></textarea>
+            <button type="submit">Sanitize</button>
+        </form>
+        <div id="sanitize-output"></div>
+
+        <!-- Delete Sensitive Word -->
+        <h2>Delete Sensitive Word</h2>
+        <form id="delete-form">
+            <input id="delete-id" type="number" placeholder="Enter word ID">
+            <button type="submit">Delete</button>
+        </form>
+
+        <!-- Update Sensitive Words -->
+        <h2>Update Sensitive Word</h2>
+        <form id="update-form">
+            <input id="update-id" type="number" placeholder="Enter word ID">
+            <input id="update-word" type="text" placeholder="Enter updated word">
+            <button type="submit">Update</button>
+        </form>
+        <div id="updateWordOutput"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
