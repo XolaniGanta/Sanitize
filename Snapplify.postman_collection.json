@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "d4fcf346-b21a-4be3-a52a-87317c2bbb1d",
+		"name": "Snapplify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29555835"
+	},
+	"item": [
+		{
+			"name": "GetAllSensitiveWords",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/sensitive-words/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Sensitive Word",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/sensitive-words/delete/44"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Sensitive Word",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 6,\n  \"newWord\": \"updaedWords\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/sensitive-words/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Api Docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v3/api-docs"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Sensitive Words",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"words\": [\n        \"badword\",\n        \"fuck\",\n        \"inappropriate\",\n        \"offensiveWord1\",\n        \"slur1\",\n        \"derogatoryTerm1\",\n        \"curse1\",\n        \"insult1\",\n        \"insult1\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/sensitive-words/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Sanitize Sensitive Words",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"inputString\": \"Hey man what fuck you mean \"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/sensitive-words/sanitize"
+			},
+			"response": []
+		}
+	]
+}
