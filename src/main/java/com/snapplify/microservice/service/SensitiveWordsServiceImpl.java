@@ -41,7 +41,7 @@ public class SensitiveWordsServiceImpl implements SensitiveWordService {
                 .map(SensitiveWords::getWord)
                 .toList();
 
-        List<String> wordsToAdd = newWords.stream()
+        List<String> wordsToAdd = uniqueWords.stream()
                 .filter(word -> !existingWords.contains(word))
                 .toList();
 
@@ -50,14 +50,13 @@ public class SensitiveWordsServiceImpl implements SensitiveWordService {
             throw new SanitizeException(ErrorCode.INVALID_INPUT);
         }
 
-        List<SensitiveWords> sensitiveWords = sensitiveWordsRequest.getWords()
-                .stream()
+        List<SensitiveWords> sensitiveWords = wordsToAdd.stream()
                 .map(word -> new SensitiveWords(null, word))
                 .toList();
 
         sensitiveWordRepository.saveAll(sensitiveWords);
 
-        SensitiveWordsResponse response = buildSensitiveWordResponse(sensitiveWordsRequest);
+        SensitiveWordsResponse response = buildSensitiveWordResponse(wordsToAdd);
 
         log.debug("addSensitiveWords - completed - response: {}", response);
 

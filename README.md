@@ -26,6 +26,18 @@ Snapplify Microservice is a Spring Boot-based API service designed for managing 
 - Clean and build the project using Gradle.
 - Start the application.
 
+   ##### FRONTEND
+- Open the Project:
+  Launch the project in VS Code or any other IDE that supports JavaScript/HTML.
+
+- Start the Application:
+  Use Live Server (or an equivalent tool) to start the application, which will automatically open it in your web browser.
+
+- Ensure Backend is Running:
+  Before making any requests from the UI, ensure that the backend server is running.
+
+- Address Potential CORS Errors:
+  If you encounter a CORS error, update the @CrossOrigin annotation in the backend controller (SensitiveWordsController) to allow the correct origin.
 3. ##### H2 Database Console:
 - Access the in-memory H2 database console using the following URL: http://localhost:8080/h2-console.
 - Credentials are configured in the application.yml file.

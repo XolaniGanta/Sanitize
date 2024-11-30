@@ -13,9 +13,9 @@ import java.util.List;
 @UtilityClass
 public class Helper {
 
-    public static SensitiveWordsResponse buildSensitiveWordResponse(SensitiveWordsRequest sensitiveWordsRequest) {
+    public static SensitiveWordsResponse buildSensitiveWordResponse(List<String> wordsToAdd) {
         return SensitiveWordsResponse.builder()
-                .numOfWordsSaved(sensitiveWordsRequest.getWords().size())
+                .numOfWordsSaved(wordsToAdd.size())
                 .build();
     }
 
