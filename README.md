@@ -1,6 +1,6 @@
-# SNAPPLIFY MICROSERVICE #
+# SANITIZE MICROSERVICE #
 
-Snapplify Microservice is a Spring Boot-based API service designed for managing and sanitizing sensitive words. The project allows users to add, update, delete, and retrieve sensitive words while offering functionality to sanitize input strings by replacing sensitive words with asterisks.
+SANITIZE Microservice is a Spring Boot-based API service designed for managing and sanitizing sensitive words. The project allows users to add, update, delete, and retrieve sensitive words while offering functionality to sanitize input strings by replacing sensitive words with asterisks.
 
 ### Overview
 - Framework: Spring Boot 3
